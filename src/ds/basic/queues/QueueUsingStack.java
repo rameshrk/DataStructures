@@ -4,12 +4,12 @@ public class QueueUsingStack {
 
 	Stack stack = new Stack();
 
-	public void enque(int data) {
+	public void enqueue(int data) {
 		stack.push(data);
 		stack.print();
 	}
 
-	public void deque() {
+	public void dequeue() {
 		reverse(stack);
 //		stack.print();
 	}
@@ -27,26 +27,26 @@ public class QueueUsingStack {
 	public static void main(String[] args) {
 
 		QueueUsingStack queueUsingStack = new QueueUsingStack();
-		queueUsingStack.enque(1);
-		queueUsingStack.enque(2);
-		queueUsingStack.enque(3);
-		queueUsingStack.enque(4);
-		queueUsingStack.enque(123);
+		queueUsingStack.enqueue(1);
+		queueUsingStack.enqueue(2);
+		queueUsingStack.enqueue(3);
+		queueUsingStack.enqueue(4);
+		queueUsingStack.enqueue(123);
 
 		System.out.println("Input :: ");
 		queueUsingStack.stack.print();
 
-		queueUsingStack.deque();
+		queueUsingStack.dequeue();
 		System.out.println();
 		System.out.println("Output :: after 1st deque");
 		queueUsingStack.stack.print();
 
-		queueUsingStack.deque();
+		queueUsingStack.dequeue();
 		System.out.println();
 		System.out.println("Output :: after 2nd deque");
 		queueUsingStack.stack.print();
 
-		queueUsingStack.enque(999);
+		queueUsingStack.enqueue(999);
 		System.out.println();
 		System.out.println("Output :: after 999 enque");
 		queueUsingStack.stack.print();
@@ -66,6 +66,7 @@ class Stack {
 		top = -1;
 	}
 
+	
 	public void push(int j) { // put item on stack
 		st[++top] = j;
 	}
@@ -85,6 +86,12 @@ class Stack {
 	public void print() {
 		for (int i = 0; i <= top; i++)
 			System.out.print(" :: " + st[i]);
+	}
+
+
+	public int size() {
+		// TODO Auto-generated method stub
+		return st.length;
 	}
 
 }
